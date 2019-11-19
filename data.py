@@ -30,7 +30,7 @@ def view(db_path):
                 break
 
 
-def export_images(db_path, out_dir, flat=False, limit=-1):
+def export_images(db_path, out_dir, flat=True, limit=100000):
     print('Exporting', db_path, 'to', out_dir)
     env = lmdb.open(db_path, map_size=1099511627776,
                     max_readers=100, readonly=True)
